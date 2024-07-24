@@ -1,5 +1,5 @@
 node{
-    stage('Revisión'){
+    stage('Revisar'){
         checkout scm
     }
     
@@ -7,8 +7,13 @@ node{
         bat 'npm install'
     }
 
-    stage('Construir aplicación'){
+    stage('Construir aplicacion'){
         bat 'npm run ng build'
+    }
+
+    //Borrar carpeta del html
+    stage('Limpiar carpeta destino'){
+        bat 'rmdir C:\servidor\fire /s'
     }
 
     stage('Mover al servidor'){
