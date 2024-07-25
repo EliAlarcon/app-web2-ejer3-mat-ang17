@@ -13,7 +13,7 @@ node{
 
     //Borrar carpeta del html
     stage('Limpiar carpeta destino'){
-        bat 'rmdir C:\\servidor\\fire /s'
+        bat 'del /Q C:\\servidor\\fire\\*'
     }
 
     stage('Mover al servidor'){
